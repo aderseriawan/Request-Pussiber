@@ -1,0 +1,52 @@
+:root {
+  --panel-bg: rgba(255, 255, 255, 0.9);
+  --panel-border: rgba(148, 163, 184, 0.25);
+  --cyber-primary: #22d3ee;
+  --cyber-accent: #a78bfa;
+  --cyber-bg-start: #020617;
+  --cyber-bg-mid: #0b1228;
+  --cyber-bg-end: #030712;
+}
+
+.dark {
+  --panel-bg: rgba(15, 23, 42, 0.85);
+  --panel-border: rgba(148, 163, 184, 0.22);
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% -10%, rgba(34, 211, 238, 0.16), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 30%),
+    linear-gradient(160deg, var(--cyber-bg-start), var(--cyber-bg-mid) 45%, var(--cyber-bg-end));
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Space Grotesk', 'Figtree', 'Segoe UI', sans-serif;
+}
+
+.dark body {
+  background: radial-gradient(circle at 20% -10%, rgba(34, 211, 238, 0.16), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 30%),
+    linear-gradient(160deg, var(--cyber-bg-start), var(--cyber-bg-mid) 45%, var(--cyber-bg-end));
+  color: #e2e8f0;
+}
+
+.dashboard-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.25), inset 0 0 0 1px rgba(34, 211, 238, 0.07);
+  backdrop-filter: blur(8px);
+}
+
+.dark .dashboard-panel {
+  background: rgba(8, 15, 34, 0.84);
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+.cyber-title {
+  background: linear-gradient(90deg, #67e8f9, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

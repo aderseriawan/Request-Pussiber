@@ -1,14 +1,31 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
-  plugins: [
-    '~/plugins/chartjs.client.ts',
-    '~/plugins/chartjs-gradient.client.ts',
-    '~/plugins/chartjs-labels.client.ts'
-  ],
-
-  
+  css: ['~/assets/css/main.css'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  plugins: ['~/plugins/chart.ts'],
+  runtimeConfig: {
+    useDummyOnly: process.env.NUXT_USE_DUMMY_ONLY ?? 'true',
+    xBearerToken: '',
+    xApiBase: 'https://api.x.com/2',
+    instagramAccessToken: '',
+    instagramApiBase: 'https://graph.instagram.com',
+    instagramBusinessId: '',
+    public: {
+      dashboardName: 'Pussiberad Social Monitor'
+    }
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  },
+  experimental: {
+    appManifest: false
+  },
+  tailwindcss: {
+    viewer: false
+  }
 })
 
